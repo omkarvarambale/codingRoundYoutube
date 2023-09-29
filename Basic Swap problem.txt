@@ -1,0 +1,30 @@
+package GatewayOfIT;
+import java.util.*;
+
+public class BasicSwappingProblem {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method st
+   
+   System.out.println("Basic Swapping Problems");
+   
+   Scanner sc = new Scanner(System.in);
+   System.out.println("please Enter First number:");
+   int num1 = sc.nextInt();
+   
+   System.out.println("please Enter Second number:");
+   int num2 = sc.nextInt();
+   System.out.println("Before the Swapping num1: " +num1 +"num2: " +num2);
+   
+   int temp=num1;
+   num1=num2;
+   num2=temp;
+   
+   System.out.println("After the Swapping num1: " +num1 +"num2: " +num2);
+   
+   
+   
+   
+	}
+
+}
