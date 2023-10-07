@@ -1,0 +1,56 @@
+//Avaloq coding round question-1
+
+//Logic: 
+//What is parentheses
+//     <<?>>
+//
+//<<>>
+//Ascii of :  <:60  | >:  62| ?:  63
+
+package CodingRound;
+
+import java.util.*;
+
+public class Parentheses {
+
+	public static void main(String[] args) {
+
+		String str = "<<?>>";
+
+		int leftCount = 0;
+		int rightCount = 0;
+
+		List<Integer> list = new ArrayList<Integer>();
+		Stack<Integer> stk = new Stack<Integer>();
+
+		for (int i = 0; i < str.length(); i++) {
+			int ascii = str.charAt(i);
+//			System.out.println(ascii);
+			if (ascii == 63) {
+				ascii = 60;
+			}
+			list.add(ascii);
+
+		}
+
+		for (int j = 0; j < str.length(); j++) {
+			if (list.get(j) == 60) {
+				stk.push(list.get(j));
+				leftCount++;
+			}
+		}
+
+		for (int j = 0; j < str.length(); j++) {
+			if (list.get(j) == 62) {
+				stk.push(list.get(j));
+				rightCount++;
+			}
+		}
+
+		int diff = Math.abs(rightCount - leftCount);
+		int result = str.length() - diff;
+		System.out.println(result);
+
+	}
+
+}
